@@ -1,4 +1,4 @@
-#coding:utf8
+#coding=utf8
 import url_manager, html_downloader, html_outputer, html_parser
 class SpiderMain(object):
     def __init__(self):
@@ -15,8 +15,9 @@ class SpiderMain(object):
                 print "craw %d : %s"%(count,new_url)
                 html_cont =self.downloader.download(new_url)
                 #print html_cont
+                #print "download_ok"
                 new_urls, new_data = self.parser.parse(new_url,html_cont)
-                #print new_urls
+                #print new_data['title']
                 self.urls.add_new_urls(new_urls)
                 self.outputer.collect_data(new_data)
                 if count == total_num:

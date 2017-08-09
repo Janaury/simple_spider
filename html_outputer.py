@@ -1,4 +1,4 @@
-#coding:utf8
+#coding=utf8
 class HtmlOutputer:
     def __init__(self):
         self.datas = []
@@ -15,10 +15,10 @@ class HtmlOutputer:
         fout.write("<body>")
         fout.write("<table>")
         for data in self.datas:
-            fout.write("<tr><td>%s</td></tr>" % data['url'].encode('utf-8'))
+            #fout.write("<tr><td>%s</td></tr>" % data['url'].encode('utf-8'))
             fout.write("<tr'><td>%s</td></tr>" % data['title'].encode('utf-8'))
-            fout.write("<tr><td>%s</td></tr>" % data['summary'].encode('utf-8'))
-            fout.write("<tr><td>-------------------------------------------</td></tr>")
+            fout.write("<tr><td>%s</td></tr>" %  data['download_url'].encode('utf-8'))
+            fout.write("<tr><td>------------------------------------------------------------------------------------------</td></tr>")
         fout.write("</table>")
         fout.write("</body>")
         fout.write("</html>")
